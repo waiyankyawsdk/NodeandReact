@@ -24,3 +24,12 @@ app.listen(3333, () => {
     console.log(`Listening at http://localhost:3333`)
 })
 
+app.get("/fetchMonth/:number",(req,res)=>{
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    res.send(months[req.params.number-1 ]);
+})
+
+app.get("/fetchDay/:number",(req,res)=>{
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    res.send(days[req.params.number-1 ]);
+})
